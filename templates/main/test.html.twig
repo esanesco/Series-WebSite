@@ -1,13 +1,37 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Series!</title>
-</head>
-<body>
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} | Tests {% endblock %}
+
+{% block body %}
 <h1>TESTTTTTTTTS</h1>
-</body>
-</html>
+<div>
+    <div>{{ "+1 year"|date('Y') }}</div>
+
+    {# commentaires #}
+    {% set name = 'Elena' %}
+    <h2>{{ name|upper }}</h2>
+
+    {#  creation d'un tableau #}
+    {% set colors = ["orange", "red", "brown", "yellow"] %}
+    <div> nombre de couleurs : {{ colors|length }}</div>
+    <div>{{ colors|join(' / ') }}</div>
+    {% for color in colors %}
+        <div>{{ loop.index }}</div>
+        <div style="background-color: {{ color }}">{{ color }}</div>
+    {% endfor %}
+
+    {# creation d'un objet #}
+    {% set book = {
+        title: 'Dragon',
+        year: 2002,
+        author: 'John Doe'}
+    %}
+
+    <h3>{{ book.title }}</h3>
+    <div>
+        {% for key, value in book %}
+            <div>{{ key }}: {{ value }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
