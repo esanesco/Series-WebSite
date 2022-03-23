@@ -49,3 +49,53 @@ nav ul {
 nav li {
     margin-right: 1rem;
 }
+
+/*Series list*/
+.series-list{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+/*Formulaires*/
+label {
+    display: block;
+}
+
+input, textarea, select{
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    max-width: 50%;
+    width: 250px;
+}
+
+.flash-succes{
+    background-color: darkseagreen;
+    color: darkgreen;
+
+}
+
+.flash{
+    padding: 2%;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+/**DETAILS*/
+.serie-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+}
+
+.serie-details-infos > div {
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 700px) {
+    .serie-details {
+        grid-template-columns: 300px 1fr;
+    }
+}
